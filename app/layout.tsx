@@ -7,6 +7,9 @@ import { Analytics } from "@vercel/analytics/react"
 export const metadata = {
   title: "Kasas Cheesecake",
   description: "Tartas caseras con amor",
+  icons: {
+    icon: "/favicon.png", 
+  },
 };
 
 type RootLayoutProps = {
