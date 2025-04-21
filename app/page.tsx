@@ -15,7 +15,7 @@ export default function Home() {
             <p className="text-lg text-oliva/80 mb-6">
               Tartas artesanas, irresistibles y hechas con amor. Descubre nuestros sabores únicos y vive una experiencia dulce.
             </p>
-            <button className="bg-oliva text-white py-3 px-6 rounded-xl hover:bg-oliva/90 transition text-lg">
+            <button className="bg-black text-white py-3 px-6 rounded-xl hover:bg-oliva/90 transition text-lg">
               ¡Haz tu pedido!
             </button>
           </div>
