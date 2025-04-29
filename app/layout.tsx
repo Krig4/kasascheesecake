@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import { ReactNode } from "react";
 import Footer from '@/components/Footer';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   title: "Kasas Cheesecake",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Navbar />
         <main className="max-w-5xl mx-auto px-4">{children}</main>
         <Analytics />
+        <SpeedInsights/>
         <Footer />
       </body>
     </html>
