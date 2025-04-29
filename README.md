@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧁 Kasas Cheesecake
 
-## Getting Started
+Bienvenido al sitio web de **Kasas Cheesecake**, una pastelería artesanal especializada en tartas caseras irresistibles, hechas con mucho amor. Este proyecto fue creado con ❤️ utilizando **Next.js** y **Tailwind CSS**, con un enfoque en el diseño limpio, responsive y orientado a la experiencia del cliente.
 
-First, run the development server:
+---
+
+## 🌐 Vista previa
+
+![Kasas Cheesecake Screenshot](public/img/screenshot-home.jpg)
+
+➡️ [Ver sitio en producción](https://kasascheesecake.vercel.app/)
+
+---
+
+## 🚀 Tecnologías utilizadas
+
+- Next.js
+- React
+- Tailwind CSS
+- TypeScript
+- Vercel Analytics
+
+---
+
+## 📸 Funcionalidades
+
+- ✅ Navbar fijo con navegación fluida
+- ✅ Página de inicio atractiva con sección de tartas destacadas
+- ✅ Estética moderna con paleta de colores pastel (o personalizable)
+- ✅ Favicon personalizado con ícono de tartita
+- ✅ Diseño responsive para móviles y tablets
+- ✅ Footer informativo con derechos reservados
+
+---
+
+## 🛠️ Cómo instalar el proyecto
 
 ```bash
+# Clona el repositorio
+git clone https://github.com/tuusuario/kasas-cheesecake.git
+
+# Entra en la carpeta
+cd kasas-cheesecake
+
+# Instala dependencias
+npm install
+
+# Inicia el servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
