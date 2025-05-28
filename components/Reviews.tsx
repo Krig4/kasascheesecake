@@ -27,24 +27,29 @@ export default function Reviews() {
             fields: ["reviews"],
           };
 
-          service.getDetails(request, (place: google.maps.places.PlaceResult, status: google.maps.places.PlacesServiceStatus) => {
-  if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-              const container = document.getElementById("google-reviews");
-              if (container && place.reviews) {
-                container.innerHTML = "";
-                place.reviews.slice(0, 3).forEach((review) => {
-                  const el = document.createElement("div");
-                  el.className = "bg-white p-4 rounded shadow mb-4";
-                  el.innerHTML = `
-                    <p class="font-semibold">${review.author_name}</p>
-                    <p class="text-yellow-500">${"★".repeat(review.rating)}</p>
-                    <p class="text-gray-700">${review.text}</p>
-                  `;
-                  container.appendChild(el);
-                });
+          service.getDetails(
+            request,
+            (
+              place: google.maps.places.PlaceResult,
+              status: google.maps.places.PlacesServiceStatus
+            ) => {
+              if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+                const container = document.getElementById("google-reviews");
+                if (container && place.reviews) {
+                  container.innerHTML = "";
+                  place.reviews.slice(0, 3).forEach((review) => {
+                    const el = document.createElement("div");
+                    el.className = "bg-white p-4 rounded shadow mb-4";
+                    el.innerHTML = `
+                      <p class="font-semibold">${review.author_name}</p>
+                      <p class="text-yellow-500">${"★".repeat(review.rating ?? 0)}</p>
+                      <p class="text-gray-700">${review.text}</p>`;
+                    container.appendChild(el);
+                  });
+                }
               }
             }
-          });
+          );
         }
       }, 500);
     };
