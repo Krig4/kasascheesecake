@@ -27,8 +27,8 @@ export default function Reviews() {
             fields: ["reviews"],
           };
 
-          service.getDetails(request, (place, status) => {
-            if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+          service.getDetails(request, (place: google.maps.places.PlaceResult, status: google.maps.places.PlacesServiceStatus) => {
+  if (status === window.google.maps.places.PlacesServiceStatus.OK) {
               const container = document.getElementById("google-reviews");
               if (container && place.reviews) {
                 container.innerHTML = "";
