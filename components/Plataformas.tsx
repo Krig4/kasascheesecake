@@ -3,17 +3,17 @@ import Image from "next/image";
 const plataformas = [
   {
     name: "Glovo",
-    img: "/img/logos/glovo.png",
+    img: "/img/logos/Glovo.png",
     link: "https://glovoapp.com/es/es/alcala-de-henares/kasas-cheesecake-alcala-de-henares-y-torrejon-de-ardoz/",
   },
   {
     name: "Uber Eats",
-    img: "/img/logos/ubereats.png",
+    img: "/img/logos/UberEats.png",
     link: "https://www.ubereats.com/es/store/kasas-cheesecake/KoNURrVDWzS-QEyiTBquxg",
   },
   {
     name: "Too Good To Go",
-    img: "/img/logos/toogoodtogo.png",
+    img: "/img/logos/TooGoodToGo.png",
     link: null,
   },
 ];
