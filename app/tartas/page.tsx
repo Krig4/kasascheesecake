@@ -1,136 +1,150 @@
-'use client'
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState({ image: '', title: '', description: '' });
+  const [modalImage, setModalImage] = useState<string | null>(null);
 
-  const handleImageClick = (image: string, title: string, description: string) => {
-    setModalContent({ image, title, description });
-    setIsModalOpen(true);
-  };
+  const openModal = (src: string) => setModalImage(src);
+  const closeModal = () => setModalImage(null);
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const tartas = [
+    "Chocolate Belga",
+    "Kinder",
+    "Oreo",
+    "Lotus",
+    "Pistacho",
+    "Pantera Rosa",
+  ];
 
   return (
     <div>
       <main className="bg-cream min-h-screen py-16 px-6">
-        <section className="max-w-5xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-oliva mb-4">
-            Bienvenido a Kasas Cheesecake
-          </h1>
-          <p className="text-lg text-oliva/80 mb-8">
-            Tartas artesanas, irresistibles y hechas con amor. Descubre nuestros sabores únicos y vive una experiencia dulce.
+        {/* Imagen vitrina */}
+        <div className="mb-12">
+          <Image
+            src="/img/SayCheese.jpg"
+            alt="Vitrina de tartas"
+            width={1200}
+            height={500}
+            className="w-full h-auto rounded-xl shadow-lg object-cover"
+          />
+        </div>
+
+        <h2 className="text-5xl font-extrabold text-center text-oliva mb-10">
+          Nuestras Tartas
+        </h2>
+
+        {/* Tarta principal */}
+        <section className="text-center mb-20">
+          <div className="relative group inline-block cursor-pointer" onClick={() => openModal("/img/tartas/tartaQueso.jpeg")}>
+            <Image
+              src="/img/tartas/tartaQueso.jpeg"
+              alt="Tarta de Queso Clásica"
+              width={500}
+              height={400}
+              className="mx-auto rounded-xl shadow-lg object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <h3 className="text-3xl font-bold text-oliva mt-6">
+            Tarta de Queso Clásica
+          </h3>
+          <p className="text-lg text-oliva/80 mt-2">
+            Una historia de cine que no te dejará indiferente.{" "}
+            <Link
+              href="/nuestra-historia"
+              className="text-oliva font-semibold underline hover:text-oliva/70"
+            >
+              Conócela aquí.
+            </Link>
           </p>
-          <button className="bg-oliva text-white py-2 px-4 rounded-xl hover:bg-oliva/90 transition">
-            ¡Haz tu pedido!
-          </button>
         </section>
 
-        {/* Tartas destacadas */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center text-oliva mb-6">Nuestras Tartas</h2>
+        {/* Tartas adicionales */}
+        <section className="mb-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
-            {[
-              {
-                image: '/img/tarta1.jpg',
-                title: 'Cheesecake de Fresa',
-                description: 'Suave, cremoso y con un topping de fresas frescas.',
-              },
-              {
-                image: '/img/tarta2.jpg',
-                title: 'Cheesecake de Chocolate',
-                description: 'Exquisito cheesecake con un intenso sabor a chocolate.',
-              },
-              {
-                image: '/img/tarta3.jpg',
-                title: 'Cheesecake de Vainilla',
-                description: 'Delicioso cheesecake con una suave crema de vainilla.',
-              },
-              {
-                image: '/img/tarta4.jpg',
-                title: 'Cheesecake de Mango',
-                description: 'Exótica y dulce cheesecake con un toque de mango tropical.',
-              },
-              {
-                image: '/img/tarta5.jpg',
-                title: 'Cheesecake de Limón',
-                description: 'Refrescante cheesecake con un delicioso sabor a limón.',
-              },
-              {
-                image: '/img/tarta6.jpg',
-                title: 'Cheesecake de Frambuesa',
-                description: 'Sabor frutal con una base crujiente y un toque ácido de frambuesas.',
-              },
-              {
-                image: '/img/tarta7.jpg',
-                title: 'Cheesecake de Pistacho',
-                description: 'Un sabor suave y cremoso con un toque de pistacho.',
-              },
-              {
-                image: '/img/tarta8.jpg',
-                title: 'Cheesecake de Café',
-                description: 'Sabor profundo a café en una cheesecake cremosa.',
-              },
-              {
-                image: '/img/tarta9.jpg',
-                title: 'Cheesecake de Oreo',
-                description: 'Tarta de galletas Oreo y crema suave de cheesecake.',
-              },
-            ].map((tarta, index) => (
+            {tartas.map((title, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-lg w-72 cursor-pointer"
-                onClick={() => handleImageClick(tarta.image, tarta.title, tarta.description)}
+                className="bg-white p-6 rounded-xl shadow-lg w-72 transform hover:scale-105 transition cursor-pointer"
+                onClick={() => openModal(`/img/tartas/tarta${index + 1}.jpeg`)}
               >
                 <Image
-                  src={tarta.image}
-                  alt={tarta.title}
-                  className="rounded-xl"
+                  src={`/img/tartas/tarta${index + 1}.jpeg`}
+                  alt={title}
+                  className="rounded-xl object-cover w-full h-48"
                   width={300}
                   height={200}
                 />
-                <h3 className="text-xl font-semibold text-oliva mt-4">{tarta.title}</h3>
-                <p className="text-gray-600 mt-2">{tarta.description}</p>
+                <h4 className="text-xl font-semibold text-oliva mt-4 text-center">
+                  {title}
+                </h4>
               </div>
             ))}
           </div>
         </section>
+
+        {/* Precios */}
+        <section className="bg-[#fdfaf3] py-16 mt-16">
+          <div className="max-w-5xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center text-oliva mb-10">
+              Precios
+            </h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-[#3b3b3b]">
+              {[
+                { desc: "Porción Tarta de Queso Clásica", price: "3,50€" },
+                { desc: "Porción Tarta de Sabores", price: "3,95€" },
+                { desc: "Tarta de Queso Clásica Pequeña", price: "8,90€" },
+                { desc: "Tarta Sabores Pequeña", price: "11,90€" },
+                { desc: "Tarta de Queso Clásica Mediana", price: "18,95€" },
+                { desc: "Tarta Sabores Mediana", price: "27,95€" },
+                { desc: "Tarta de Queso Clásica Grande", price: "27,95€" },
+                { desc: "Tarta Sabores Grande", price: "38,50€" },
+                { desc: "Tarta de Pistacho Mediana", price: "38,50€" },
+                { desc: "Tarta de Pistacho Grande", price: "45,90€" },
+              ].map((item, index) => (
+                <li
+                  key={index}
+                  className="bg-white p-4 rounded-xl shadow text-center flex flex-col items-center hover:shadow-md transition"
+                >
+                  <span className="font-medium text-oliva mb-1">
+                    {item.desc}
+                  </span>
+                  <span className="text-lg font-bold text-[#5a5a5a]">
+                    {item.price}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
       </main>
 
-      {/* Modal con imagen a la izquierda y texto a la derecha */}
-      {isModalOpen && (
+      {/* Modal de imagen */}
+      {modalImage && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-          onClick={handleCloseModal}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in"
+          onClick={closeModal}
         >
           <div
-            className="bg-white p-6 rounded-xl shadow-lg w-11/12 md:w-3/4 max-w-4xl flex flex-col md:flex-row gap-6 relative"
+            className="bg-white p-4 rounded-xl shadow-lg max-w-3xl w-full max-h-[90vh] overflow-auto relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              onClick={handleCloseModal}
-              className="absolute top-4 right-4 text-xl font-bold text-gray-600 hover:text-gray-800"
+              className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-gray-800"
+              onClick={closeModal}
             >
-              X
+              ×
             </button>
-            <div className="w-full md:w-1/2">
-              <Image
-                src={modalContent.image}
-                alt={modalContent.title}
-                width={500}
-                height={500}
-                className="rounded-xl w-full h-auto object-cover"
-              />
-            </div>
-            <div className="w-full md:w-1/2 flex flex-col justify-center">
-              <h3 className="text-3xl font-semibold text-oliva mb-4">{modalContent.title}</h3>
-              <p className="text-gray-700 text-lg">{modalContent.description}</p>
-            </div>
+            <Image
+              src={modalImage}
+              alt="Tarta ampliada"
+              width={800}
+              height={600}
+              className="w-full h-auto rounded-xl object-cover"
+            />
           </div>
         </div>
       )}
