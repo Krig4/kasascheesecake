@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TartaDestacada() {
   return (
@@ -21,9 +22,15 @@ export default function TartaDestacada() {
           <p className="text-lg text-gray-700 leading-relaxed">
             La original Tarta de Queso de <strong>Kasas Cheesecake</strong>{" "}
             nació hace más de medio siglo en <em>Finca El Cine</em>, el espacio
-            gastronómico que durante varias décadas dio de comer a las
-            estrellas del cine que grabaron películas del oeste en los famosos
-            estudios <strong>Madrid70</strong>, situados en Daganzo de Arriba.
+            gastronómico que durante varias décadas dio de comer a las estrellas
+            del cine que grabaron películas del oeste en los famosos estudios{" "}
+            <strong>Madrid70</strong>, situados en Daganzo de Arriba.{" "}
+            <Link
+              href="/nuestra-historia"
+              className="text-oliva font-semibold underline hover:text-oliva/70"
+            >
+              Conoce más.
+            </Link>
           </p>
         </div>
       </div>
