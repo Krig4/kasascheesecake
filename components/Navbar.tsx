@@ -49,6 +49,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-6">
           <Link href="/" className="hover:text-oliva/80">Inicio</Link>
           <Link href="/tartas" className="hover:text-oliva/80">Tartas</Link>
+          <Link href="/cookies" className="hover:text-oliva/80">Cookies</Link>
           <Link href="/nuestra-historia" className="hover:text-oliva/80">Nuestra Historia</Link>
           <Link href="/contacto" className="hover:text-oliva/80">Contacto</Link>
           <Link href="/faq" className="hover:text-oliva/80">FAQ</Link>
@@ -83,6 +84,7 @@ export default function Navbar() {
         <div ref={menuRef} className="md:hidden flex flex-col space-y-4 mt-4 text-white py-4 px-6 bg-black">
           <Link href="/" className="hover:text-oliva/80" onClick={() => setIsOpen(false)}>Inicio</Link>
           <Link href="/tartas" className="hover:text-oliva/80" onClick={() => setIsOpen(false)}>Tartas</Link>
+          <Link href="/cookies" className="hover:text-oliva/80" onClick={() => setIsOpen(false)}>Cookies</Link>
           <Link href="/nuestra-historia" className="hover:text-oliva/80" onClick={() => setIsOpen(false)}>Nuestra Historia</Link>
           <Link href="/contacto" className="hover:text-oliva/80" onClick={() => setIsOpen(false)}>Contacto</Link>
           <Link href="/faq" className="hover:text-oliva/80" onClick={() => setIsOpen(false)}>FAQ</Link>

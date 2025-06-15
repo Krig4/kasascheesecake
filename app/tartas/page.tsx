@@ -17,6 +17,7 @@ export default function Home() {
     "Lotus",
     "Pistacho",
     "Pantera Rosa",
+    "Chocolate Blanco",
   ];
 
   return (

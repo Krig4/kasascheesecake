@@ -22,7 +22,7 @@ export default function FAQPage() {
     {
       question: '¿De cuántas raciones son cada tarta?',
       answer:
-        'Aproximadamente, la pequeña correspondería a 2 raciones. La mediana a 8-10. La grande a 14-16.',
+        'Aproximadamente, la pequeña correspondería a 2 raciones. La mediana a 6-8. La grande a 12-14.',
     },
     {
       question: '¿Hacéis envío a domicilio?',
@@ -33,6 +33,11 @@ export default function FAQPage() {
       question: '¿Se puede tomar la tarta en el local?',
       answer:
         'Por supuesto, disponemos de una zona donde podréis tomar vuestras tartas favoritas acompañadas de un delicioso café, infusión o Cola Cao.',
+    },
+    {
+      question: '¿Las tartas son aptas para embarazadas?',
+      answer:
+        'La tarta de queso clásica no es apta para embarazadas. Sí lo son el resto de tartas.',
     },
   ];
 
