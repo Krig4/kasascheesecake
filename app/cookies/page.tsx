@@ -73,8 +73,8 @@ export default function Cookies() {
             </h3>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               {[
-                { desc: "Cookie Clásica", price: "2,95€" },
-                { desc: "Cookie de Sabores", price: "3,95€" },
+                //{ desc: "Cookie Clásica", price: "2,95€" },
+                { desc: "Cookie", price: "3,95€" },
               ].map((item, index) => (
                 <div
                   key={index}

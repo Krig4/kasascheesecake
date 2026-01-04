@@ -95,14 +95,14 @@ export default function Home() {
             </h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-[#3b3b3b]">
               {[
-                { desc: "Porción Tarta de Queso Clásica", price: "3,50€" },
-                { desc: "Porción Tarta de Sabores", price: "3,95€" },
-                { desc: "Tarta de Queso Clásica Pequeña", price: "8,90€" },
-                { desc: "Tarta Sabores Pequeña", price: "11,90€" },
-                { desc: "Tarta de Queso Clásica Mediana", price: "18,95€" },
-                { desc: "Tarta Sabores Mediana", price: "27,95€" },
-                { desc: "Tarta de Queso Clásica Grande", price: "27,95€" },
-                { desc: "Tarta Sabores Grande", price: "38,50€" },
+                { desc: "Porción Tarta de Queso Clásica", price: "4,50€" },
+                { desc: "Porción Tarta de Sabores", price: "4,95€" },
+                { desc: "Tarta de Queso Clásica Pequeña", price: "9,95€" },
+                { desc: "Tarta Sabores Pequeña", price: "12,50€" },
+                { desc: "Tarta de Queso Clásica Mediana", price: "24,95€" },
+                { desc: "Tarta Sabores Mediana", price: "29,95€" },
+                { desc: "Tarta de Queso Clásica Grande", price: "34,95€" },
+                { desc: "Tarta Sabores Grande", price: "39,95€" },
                 { desc: "Tarta de Pistacho Mediana", price: "38,50€" },
                 { desc: "Tarta de Pistacho Grande", price: "45,90€" },
               ].map((item, index) => (
